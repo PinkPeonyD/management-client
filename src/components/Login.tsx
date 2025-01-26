@@ -17,6 +17,7 @@ const Login: React.FC = () => {
     try {
       await login(email, password);
       navigate("/");
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       setError(
         "Invalid email or password. Please check your credentials or sign up."

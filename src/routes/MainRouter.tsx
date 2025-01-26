@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import AuthorizedRoutes from "../routes/AuthorizedRoutes";
-import UnauthorizedRoutes from "../routes/UnauthorizedRoutes";
+import AuthorizedRoutes from "./AuthorizedRoutes.tsx";
+import UnauthorizedRoutes from "./UnauthorizedRoutes.tsx";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 

@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { RootState } from "./store";
+import { RootState } from "./store.ts";
 
 interface User {
   id: string;
@@ -33,11 +34,14 @@ export const fetchUsers = createAsyncThunk(
         throw new Error("No token found");
       }
 
-      const response = await fetch("https://management-server-bmj0.onrender.com/api/users", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await fetch(
+        "https://management-server-bmj0.onrender.com/api/users",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -66,14 +70,17 @@ export const blockUsers = createAsyncThunk(
         throw new Error("No token found");
       }
 
-      const response = await fetch("https://management-server-bmj0.onrender.com/api/users/block", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ userIds }),
-      });
+      const response = await fetch(
+        "https://management-server-bmj0.onrender.com/api/users/block",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({ userIds }),
+        }
+      );
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -82,6 +89,7 @@ export const blockUsers = createAsyncThunk(
 
       const data = await response.json();
       return { success: true, userIds: data.userIds };
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       return rejectWithValue("Failed to block users");
     }
@@ -99,14 +107,17 @@ export const unblockUsers = createAsyncThunk(
         throw new Error("No token found");
       }
 
-      const response = await fetch("https://management-server-bmj0.onrender.com/api/users/unblock", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ userIds }),
-      });
+      const response = await fetch(
+        "https://management-server-bmj0.onrender.com/api/users/unblock",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({ userIds }),
+        }
+      );
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -132,14 +143,17 @@ export const deleteUsers = createAsyncThunk(
         throw new Error("No token found");
       }
 
-      const response = await fetch("https://management-server-bmj0.onrender.com/api/users/delete", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ userIds }),
-      });
+      const response = await fetch(
+        "https://management-server-bmj0.onrender.com/api/users/delete",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({ userIds }),
+        }
+      );
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -167,13 +181,16 @@ export const createUser = createAsyncThunk(
     { rejectWithValue }
   ) => {
     try {
-      const response = await fetch("https://management-server-bmj0.onrender.com/api/users/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),
-      });
+      const response = await fetch(
+        "https://management-server-bmj0.onrender.com/api/users/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(userData),
+        }
+      );
 
       if (!response.ok) {
         const errorData = await response.json();

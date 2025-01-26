@@ -3,16 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { strings } from "../utils/strings";
-import { showSuccessToast, showErrorToast } from "../utils/toast";
-import {
-  fetchUsers,
-  blockUsers,
-  unblockUsers,
-  deleteUsers,
-} from "../redux/usersSlice";
-import { RootState, AppDispatch } from "../redux/store";
-import { logout, updateUserStatus } from "../redux/authSlice";
+import {AppDispatch, RootState} from "../redux/store.ts";
+import {blockUsers, deleteUsers, fetchUsers, unblockUsers} from "../redux/usersSlice.ts";
+import {logout, updateUserStatus} from "../redux/authSlice.ts";
+import {showErrorToast, showSuccessToast} from "../utils/toast.ts";
+import {strings} from "../utils/strings.ts";
+
 
 const HomeScreen: React.FC = () => {
   const [filter, setFilter] = useState("");
@@ -109,6 +105,7 @@ const HomeScreen: React.FC = () => {
       }
 
       return true;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       dispatch(logout());
       navigate("/login");
@@ -141,6 +138,7 @@ const HomeScreen: React.FC = () => {
           navigate("/login");
         }
       }
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       showErrorToast("Failed to block users");
     }
@@ -170,6 +168,7 @@ const HomeScreen: React.FC = () => {
           dispatch(updateUserStatus({ status: "active" }));
         }
       }
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       showErrorToast("Failed to unblock users");
     }
@@ -200,6 +199,7 @@ const HomeScreen: React.FC = () => {
           navigate("/login");
         }
       }
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       showErrorToast("Failed to delete users");
     }

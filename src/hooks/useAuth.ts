@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../redux/store";
-import { login, logout } from "../redux/authSlice";
+import {login, logout} from "../redux/authSlice.ts";
+import {RootState} from "../redux/store.ts";
+
+
 
 const useAuth = () => {
   const dispatch = useDispatch();
@@ -9,13 +11,16 @@ const useAuth = () => {
 
   const handleLogin = async (email: string, password: string) => {
     try {
-      const response = await fetch("https://management-server-bmj0.onrender.com/api/users/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
+      const response = await fetch(
+        "https://management-server-bmj0.onrender.com/api/users/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        }
+      );
 
       if (!response.ok) {
         const errorData = await response.json();
