@@ -4,6 +4,7 @@ import store from "./redux/store";
 import App from "./App.tsx";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "react-toastify/dist/ReactToastify.css";
 
 const rootElement = document.getElementById("root");
 if (!rootElement) {
