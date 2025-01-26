@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cba2e56a-4754-4936-8d03-b72d21e8d8a6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +62,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+    </key>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -84,7 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1737886640001</updated>
       <workItem from="1737886641016" duration="2838000" />
-      <workItem from="1737890700507" duration="2561000" />
+      <workItem from="1737890700507" duration="4745000" />
     </task>
     <servers />
   </component>
